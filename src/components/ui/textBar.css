@@ -1,0 +1,16 @@
+.text-bar-container {
+  display: flex;
+  flex-direction: row;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  width: 100%;
+  border:1px solid grey;
+  margin-bottom: 10px;
+}
+
+.text-bar-input {
+  width: 90%;
+  flex-grow:2;
+}
