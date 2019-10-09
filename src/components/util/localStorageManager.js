@@ -6,18 +6,22 @@ class Manager {
   // localStorage.removeItem(originalUrl);
   // localStorage.clear();
 
-  getStorage(shortenUrl) {
-    return localStorage.getItem(shortenUrl);
+  getStorage(shortenedUrl) {
+    return localStorage.getItem(shortenedUrl);
   }
 
-  setStorage(originalUrl, shortenUrl) {
-    localStorage.setItem(shortenUrl, originalUrl);
+  setStorage(shortenedUrl, originalUrl) {
+    localStorage.setItem(shortenedUrl, originalUrl);
+  }
+
+  removeItem(shortenedUrl) {
+    localStorage.removeItem(shortenedUrl);
   }
 
   getAllItems() {
-    let items = {...localStorage};
-    console.log(items)
-    return items
+    // let items = {...localStorage};
+    // console.log(items)
+    return {...localStorage};
   }
 }
 

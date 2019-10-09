@@ -3,7 +3,7 @@ import CopyButton from '../ui/button';
 import './textBar.css';
 
 const TextBar = (props) => {
-  const { text, isShortened, textUpdate } = props
+  const { text, isShortened, textUpdate, placeholder } = props
   const textRef = useRef(null);
 
   // copy text is able to
@@ -14,11 +14,16 @@ const TextBar = (props) => {
   };
 
   let ButtonProps = {cta: 'copy', click: CopyText}
-  let displayText = (isShortened) ? window.location.href + text : text;
 
   return (
     <div className="text-bar-container">
-      <input ref={textRef} className="text-bar-input" value={displayText} onChange={t => textUpdate(t.target.value)} readOnly={isShortened} />
+      <input
+        ref={textRef}
+        className="text-bar-input"
+        value={text}
+        onChange={t => textUpdate(t.target.value)}
+        readOnly={isShortened}
+        placeholder={placeholder}/>
       { isShortened &&
         document.queryCommandSupported('copy') &&
         <CopyButton {...ButtonProps} /> }

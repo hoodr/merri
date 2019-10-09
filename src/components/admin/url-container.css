@@ -1,0 +1,24 @@
+.flex-row {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: row;
+}
+.url-container {
+  justify-content: flex-start;
+  align-items: center;
+  width: inherit;
+  height: inherit;
+}
+
+.url-text-container {
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+}
+
+.url-text {
+  width: 20%;
+}

@@ -1,13 +1,15 @@
 import React from 'react';
 import HomeComponent from '../components/home';
 import HomeHeader from '../components/ui/header';
-import './Home.css';
+import './Screen.css';
 
 const Home = () => {
   return (
-    <div className="home-screen">
+    <div>
       <HomeHeader />
-      <HomeComponent />
+      <div className="screen">
+        <HomeComponent />
+      </div>
     </div>
   )
 }

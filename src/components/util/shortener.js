@@ -3,12 +3,20 @@ import StorageManager from './localStorageManager';
 
 const Shortener = (url) => {
   let manager = new StorageManager();
+  let shortenedObject = {};
+  let date = new Date();
 
-  let shortened = sha256(url + new Date()).slice(0, 8);
+  shortenedObject.key = sha256(
+    url + date.getDay() + date.getMonth() + date.getFullYear() + date.getSeconds()
+  ).slice(0, 8);
+  shortenedObject.url = url;
+  shortenedObject.day = date.getDate()
+  shortenedObject.month = date.getMonth()
+  shortenedObject.year = date.getFullYear()
 
-  manager.setStorage(url, shortened)
+  manager.setStorage(shortenedObject.key, JSON.stringify(shortenedObject));
 
-  return shortened;
+  return shortenedObject;
 };
 
 export default Shortener;

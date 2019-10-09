@@ -1,8 +1,15 @@
 import React from 'react';
+import AdminComponent from '../components/admin';
+import HomeHeader from '../components/ui/header';
+import './Screen.css';
 
 const Admin = () => {
   return (
-    <div className="admin-screen">
+    <div>
+      <HomeHeader />
+      <div className="screen">
+        <AdminComponent />
+      </div>
     </div>
   )
 }
